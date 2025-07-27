@@ -1,0 +1,7 @@
+{% if node %}
+<ul>
+    {% include 'menu/node.html' with node=node open_paths=open_paths active_path=active_path %}
+</ul>
+{% else %}
+<p>No menu named {{ menu_name }}</p>
+{% endif %}

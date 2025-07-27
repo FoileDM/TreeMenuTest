@@ -1,0 +1,10 @@
+<li>
+    <a href="/{{ node.menu.path }}/" {% if node.menu.path == active_path %}style="font-weight:bold"{% endif %}>{{ node.menu.name }}</a>
+    {% if node.children and node.menu.path in open_paths %}
+    <ul>
+        {% for child in node.children %}
+            {% include 'menu/node.html' with node=child open_paths=open_paths active_path=active_path %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>

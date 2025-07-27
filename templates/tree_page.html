@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load menu_tags %}
+
+{% block title %}Tree Menu{% endblock %}
+
+{% block content %}
+<h1>Tree Menu</h1>
+{% for menu in root_menus %}
+    {% draw_menu menu.name %}
+{% endfor %}
+{% endblock %}
